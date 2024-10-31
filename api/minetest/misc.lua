@@ -14,7 +14,7 @@ function minetest.get_mod_storage() end
 -------
 
 ---Returns list of `ObjectRefs`.
----@return mt.PlayerObjectRef[]
+---@return (mt.PlayerObjectRef?)[]
 ---@nodiscard
 function minetest.get_connected_players() end
 
@@ -139,7 +139,7 @@ function minetest.serialize(table) end
 ---This function should not be used on untrusted data, regardless of the value of `safe`. It is fine to serialize then deserialize user-provided data, but directly providing user input to deserialize is always unsafe.
 ---@param string string
 ---@param safe? boolean
----@return table?
+---@return table|mt.Vector?
 ---@nodiscard
 function minetest.deserialize(string, safe) end
 

@@ -241,6 +241,14 @@ function vector.offset(v, x, y, z) end
 ---@nodiscard
 function vector.check(v) end
 
+---Returns a random integer position in area formed by min and max
+---min and max are inclusive.
+---You can use vector.sort if you have two vectors and don't know which are the minimum and the maximum.
+---@param min mt.Vector
+---@param max mt.Vector
+---@return mt.Vector
+function vector.random_in_area(min, max) end
+
 ---If `x` is a vector: Returns the sum of `v` and `x`.
 ---
 ---If `x` is a number: Adds `x` to each component of `v`.
@@ -275,7 +283,7 @@ function vector.divide(v, s) end
 
 ---Applies the rotation `r` (in radians) to `v` and returns the result.
 ---@param v mt.Vector
----@param r number
+---@param r mt.Vector
 ---@return mt.Vector
 ---@nodiscard
 function vector.rotate(v, r) end

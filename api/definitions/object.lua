@@ -8,29 +8,29 @@
 -- Player properties need to be saved manually.
 ---@class mt.ObjectProp
 -- For players only. Defaults to `minetest.PLAYER_MAX_HP_DEFAULT`.
----@field hp_max integer
+---@field hp_max integer?
 -- For players only. Defaults to `minetest.PLAYER_MAX_BREATH_DEFAULT`.
----@field breath_max integer
+---@field breath_max integer?
 -- For players only. Zoom FOV in degrees.
 -- Note that zoom loads and/or generates world beyond the server's
 -- maximum send and generate distances, so acts like a telescope.
 -- Smaller zoom_fov values increase the distance loaded/generated.
 -- Defaults to 15 in creative mode, 0 in survival mode.
 -- zoom_fov = 0 disables zooming for the player.
----@field zoom_fov number
+---@field zoom_fov number?
 -- For players only. Camera height above feet position in nodes.
 -- Defaults to 1.625.
----@field eye_height number
+---@field eye_height number?
 -- Collide with `walkable` nodes.
 ---@field physical boolean
 -- Collide with other objects if physical = true
 ---@field collide_with_objects boolean
 -- * `{xmin, ymin, zmin, xmax, ymax, zmax}` in nodes from object position.
 -- * Default: `{-0.5, 0.0, -0.5, 0.5, 1.0, 0.5}`.
----@field collisionbox number[]
+---@field collisionbox number[]?
 -- * `{xmin, ymin, zmin, xmax, ymax, zmax}` in nodes from object position.
 -- * Selection box uses collision box dimensions when not set.
----@field selectionbox number[]
+---@field selectionbox number[]?
 -- Overrides selection box when false
 ---@field pointable boolean
 -- * "cube" is a node-sized cube.
@@ -54,9 +54,9 @@
 ---@field visual "cube"|"sprite"|"upright_sprite"|"mesh"|"item"|"wielditem"
 -- Multipliers for the visual size. If `z` is not specified, `x` will be used
 -- to scale the entity along both horizontal axes.
----@field visual_size mt.Vector
+---@field visual_size mt.Vector?
 -- File name of mesh when using "mesh" visual
----@field mesh string
+---@field mesh string?
 -- Number of required textures depends on visual.
 -- * "cube" uses 6 textures just like a node, but all 6 must be defined.
 -- * "sprite" uses 1 texture.
@@ -65,69 +65,69 @@
 -- * "mesh" requires one texture for each mesh buffer/material (in order).
 ---@field textures string[]
 -- Number of required colors depends on visual.
----@field colors mt.ColorSpec[]
+---@field colors mt.ColorSpec[]?
 -- Use texture's alpha channel.
 -- * Excludes "upright_sprite" and "wielditem".
 -- * Note: currently causes visual issues when viewed through other
 --   semi-transparent materials such as water.
----@field use_texture_alpha boolean
+---@field use_texture_alpha boolean?
 -- Used with spritesheet textures for animation and/or frame selection
 -- according to position relative to player.
 -- Defines the number of columns and rows in the spritesheet:
 -- `{columns, rows}`.
----@field spritediv {x: integer, y: integer}
+---@field spritediv {x: integer, y: integer}?
 -- Used with spritesheet textures.
 -- Defines the `{column, row}` position of the initially used frame in the
 -- spritesheet.
----@field initial_sprite_basepos {x: integer, y: integer}
+---@field initial_sprite_basepos {x: integer, y: integer}?
 -- If false, object is invisible and can't be pointed.
 ---@field is_visible boolean
 -- If true, is able to make footstep sounds of nodes
 -- (see node sound definition for details).
----@field makes_footstep_sound boolean
+---@field makes_footstep_sound boolean?
 -- Set constant rotation in radians per second, positive or negative.
 -- Object rotates along the local Y-axis, and works with set_rotation.
 -- Set to 0 to disable constant rotation.
----@field automatic_rotate number
+---@field automatic_rotate number?
 -- If positive number, object will climb upwards when it moves
 -- horizontally against a `walkable` node, if the height difference
 -- is within `stepheight`.
----@field stepheight number
+---@field stepheight number?
 -- Automatically set yaw to movement direction, offset in degrees.
 -- 'false' to disable.
----@field automatic_face_movement_dir number
+---@field automatic_face_movement_dir (number|boolean)?
 -- Limit automatic rotation to this value in degrees per second.
 -- No limit if value <= 0.
----@field automatic_face_movement_max_rotation_per_sec number
+---@field automatic_face_movement_max_rotation_per_sec number?
 -- Set to false to disable backface_culling for model
----@field backface_culling boolean
+---@field backface_culling boolean?
 -- Add this much extra lighting when calculating texture color.
 -- Value < 0 disables light's effect on texture color.
 -- For faking self-lighting, UI style entities, or programmatic coloring
 -- in mods.
----@field glow integer
+---@field glow integer?
 -- The name to display on the head of the object. By default empty.
 -- If the object is a player, a nil or empty nametag is replaced by the player's name.
 -- For all other objects, a nil or empty string removes the nametag.
 -- To hide a nametag, set its color alpha to zero. That will disable it entirely.
----@field nametag string
+---@field nametag string?
 -- Sets text color of nametag
----@field nametag_color mt.ColorSpec
+---@field nametag_color mt.ColorSpec?
 -- Sets background color of nametag
 -- `false` will cause the background to be set automatically based on user settings.
 -- Default: false
----@field nametag_bgcolor mt.ColorSpec
+---@field nametag_bgcolor mt.ColorSpec?
 -- Same as infotext for nodes. Empty by default
----@field infotext string
+---@field infotext string?
 -- If false, never save this object statically. It will simply be
 -- deleted when the block gets unloaded.
 -- The get_staticdata() callback is never called then.
 -- Defaults to 'true'.
----@field static_save boolean
+---@field static_save boolean?
 -- Texture modifier to be applied for a short duration when object is hit
----@field damage_texture_modifier string
+---@field damage_texture_modifier string?
 -- Setting this to 'false' disables diffuse lighting of entity
----@field shaded boolean
+---@field shaded boolean?
 -- Defaults to true for players, false for other entities.
 -- If set to true the entity will show as a marker on the minimap.
----@field show_on_minimap boolean
+---@field show_on_minimap boolean?

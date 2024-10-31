@@ -200,6 +200,9 @@ function ObjectRef:set_nametag_attributes(attrs) end
 ---@class mt.LuaObjectRef : mt.ObjectRefProto
 local LuaObjectRef = {}
 
+---@class mt.LuaObject
+---@field object mt.LuaObjectRef
+
 ---* Remove object.
 ---* The object is removed after returning from Lua. However the `ObjectRef`
 ---  itself instantly becomes unusable with all further method calls having

@@ -133,7 +133,7 @@ function minetest.get_player_by_name(name) end
 ---returns a list of ObjectRefs in a sphere
 ---@param pos mt.Vector
 ---@param radius number using a Euclidean metric
----@return mt.ObjectRef[] refs
+---@return (mt.ObjectRef|nil)[] refs
 function minetest.get_objects_inside_radius(pos, radius) end
 
 ---returns a list of ObjectRefs between `pos1` and `pos2`
@@ -520,5 +520,5 @@ function minetest.check_for_falling(pos) end
 ---full-node biome 'dust' nodes.
 ---@param x number
 ---@param z number
----@return mt.Vector
+---@return number?
 function minetest.get_spawn_level(x, z) end

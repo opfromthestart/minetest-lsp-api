@@ -13,8 +13,6 @@
 --   table is deprecated.
 -- * Define object properties in this `initial_properties` table instead.
 ---@field initial_properties mt.ObjectProp
----@field name string Registered name `("mod:thing")`.
----@field object mt.ObjectRef
 local entity = {}
 
 ---@param staticdata string
